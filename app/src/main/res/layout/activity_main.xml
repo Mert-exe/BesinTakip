@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/title_app"
+                android:textColor="@color/brand_green"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/primaryContainer">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="24dp">
+
+                    <com.google.android.material.progressindicator.CircularProgressIndicator
+                        android:id="@+id/progressBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:max="2000"
+                        android:progress="0"
+                        app:indicatorColor="@color/primary"
+                        app:indicatorSize="120dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:trackColor="@color/surfaceVariant"
+                        app:trackCornerRadius="8dp"
+                        app:trackThickness="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="@id/progressBar"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/progressBar"
+                        app:layout_constraintTop_toTopOf="@id/progressBar">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/today_calories"
+                            android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
+                            android:textColor="@color/onPrimaryContainer" />
+
+                        <TextView
+                            android:id="@+id/tvCalorieStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0 / 2000"
+                            android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+                            android:textColor="@color/onPrimaryContainer"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/kcal"
+                            android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+                            android:textColor="@color/onPrimaryContainer" />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Water Tracking Card (Modernized UX) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardWater"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/surface">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/ivWaterIcon"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_drop"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/primary"
+                            android:contentDescription="Su Takibi" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="@id/ivWaterIcon"
+                            app:layout_constraintStart_toEndOf="@id/ivWaterIcon"
+                            app:layout_constraintTop_toTopOf="@id/ivWaterIcon">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Su Tüketimi"
+                                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvWaterStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0 / 2500 ml"
+                                android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+                                android:textColor="@color/onSurfaceVariant" />
+                        </LinearLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnRemoveWater"
+                            style="@style/Widget.Material3.Button.IconButton"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            app:icon="@android:drawable/ic_menu_revert"
+                            app:iconTint="@color/error"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:contentDescription="Geri Al" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/waterProgressBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:max="2500"
+                        android:progress="0"
+                        app:indicatorColor="@color/primary"
+                        app:trackColor="@color/primaryContainer"
+                        app:trackCornerRadius="10dp"
+                        app:trackThickness="12dp" />
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnAddWater100"
+                                style="@style/Widget.Material3.Button.TonalButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+100ml"
+                                android:textSize="12sp"
+                                app:cornerRadius="16dp"
+                                android:layout_marginEnd="8dp"/>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnAddWater250"
+                                style="@style/Widget.Material3.Button.TonalButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+250ml"
+                                android:textSize="12sp"
+                                app:cornerRadius="16dp"
+                                android:layout_marginEnd="8dp"/>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnAddWater500"
+                                style="@style/Widget.Material3.Button.TonalButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+500ml"
+                                android:textSize="12sp"
+                                app:cornerRadius="16dp" />
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tvMealsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="@string/last_meals"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                android:textColor="@color/onBackground" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTodayMeals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/item_meal" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:text="@string/scan_food"
+        app:icon="@android:drawable/ic_menu_camera" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabHealth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="88dp"
+        android:contentDescription="Sağlık Analizi"
+        app:srcCompat="@android:drawable/ic_menu_info_details"
+        app:backgroundTint="@color/primaryContainer"
+        app:tint="@color/onPrimaryContainer" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnFindParks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="88dp"
+        android:text="@string/find_nearby_parks"
+        app:icon="@android:drawable/ic_dialog_map"
+        app:cornerRadius="24dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabGallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="88dp"
+        android:contentDescription="@string/select_from_gallery"
+        app:srcCompat="@android:drawable/ic_menu_gallery"
+        app:backgroundTint="@color/tertiaryContainer"
+        app:tint="@color/onTertiaryContainer" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/history"
+        app:srcCompat="@android:drawable/ic_menu_recent_history"
+        app:backgroundTint="@color/secondaryContainer"
+        app:tint="@color/onSecondaryContainer" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="88dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/profile"
+        app:srcCompat="@android:drawable/ic_menu_myplaces"
+        app:backgroundTint="@color/tertiaryContainer"
+        app:tint="@color/onTertiaryContainer" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Emerald Green Palette -->
+    <color name="primary">#2ECC71</color>
+    <color name="primary_dark">#27AE60</color>
+    <color name="onPrimary">#FFFFFF</color>
+    <color name="primaryContainer">#D5F5E3</color>
+    <color name="onPrimaryContainer">#186A3B</color>
+
+    <!-- Soft Slate Palette -->
+    <color name="background">#F8F9FA</color>
+    <color name="onBackground">#2C3E50</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="onSurface">#2C3E50</color>
+    <color name="surfaceVariant">#EBEDEF</color>
+    <color name="onSurfaceVariant">#566573</color>
+
+    <!-- UI Accent Colors -->
+    <color name="secondary">#34495E</color>
+    <color name="onSecondary">#FFFFFF</color>
+    <color name="secondaryContainer">#D6DBDF</color>
+    <color name="onSecondaryContainer">#212F3D</color>
+
+    <color name="tertiary">#2980B9</color>
+    <color name="onTertiary">#FFFFFF</color>
+    <color name="tertiaryContainer">#D6EAF8</color>
+    <color name="onTertiaryContainer">#1B4F72</color>
+
+    <color name="error">#E74C3C</color>
+    <color name="onError">#FFFFFF</color>
+
+    <color name="outline">#ABB2B9</color>
+    <color name="brand_green">#2ECC71</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+</resources>

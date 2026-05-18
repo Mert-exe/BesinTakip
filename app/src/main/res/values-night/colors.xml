@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Mode - Emerald & High Contrast Gray -->
+    <color name="primary">#2ECC71</color>
+    <color name="primary_dark">#27AE60</color>
+    <color name="onPrimary">#000000</color>
+    <color name="primaryContainer">#1E8449</color>
+    <color name="onPrimaryContainer">#D5F5E3</color>
+
+    <color name="background">#121212</color>
+    <color name="onBackground">#ECF0F1</color>
+    <color name="surface">#1E1E1E</color>
+    <color name="onSurface">#ECF0F1</color>
+    <color name="surfaceVariant">#2C3E50</color>
+    <color name="onSurfaceVariant">#BDC3C7</color>
+
+    <color name="secondary">#BDC3C7</color>
+    <color name="onSecondary">#121212</color>
+    <color name="secondaryContainer">#2C3E50</color>
+    <color name="onSecondaryContainer">#ECF0F1</color>
+
+    <color name="tertiary">#5DADE2</color>
+    <color name="onTertiary">#000000</color>
+    <color name="tertiaryContainer">#21618C</color>
+    <color name="onTertiaryContainer">#D6EAF8</color>
+
+    <color name="error">#CF6679</color>
+    <color name="onError">#000000</color>
+
+    <color name="outline">#7F8C8D</color>
+    <color name="brand_green">#2ECC71</color>
+</resources>
