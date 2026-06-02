@@ -17,7 +17,11 @@ class HealthAnalysisActivity : AppCompatActivity() {
         binding = ActivityHealthAnalysisBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        binding.toolbar.setNavigationIconTint(androidx.core.content.ContextCompat.getColor(this, com.mertevran.besintakip.R.color.primary))
+
         title = "Sağlık Analizi"
 
         binding.btnCalculate.setOnClickListener {
@@ -87,7 +91,7 @@ class HealthAnalysisActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        finish()
+        onBackPressedDispatcher.onBackPressed()
         return true
     }
 }

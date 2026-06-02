@@ -72,7 +72,12 @@ class DetailsActivity : AppCompatActivity() {
         binding = ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        // Tint depends on theme, usually primary or onBackground. Using primary for visibility.
+        val primaryColor = androidx.core.content.ContextCompat.getColor(this, R.color.primary)
+        binding.toolbar.setNavigationIconTint(primaryColor)
 
         setupObservers()
         setupTextWatcher()
@@ -356,7 +361,7 @@ class DetailsActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        finish()
+        onBackPressedDispatcher.onBackPressed()
         return true
     }
 

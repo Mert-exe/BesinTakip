@@ -11,6 +11,14 @@
         android:layout_height="match_parent"
         app:implementationMode="compatible" />
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/white" />
+
     <!-- Scanning Overlay -->
     <View
         android:id="@+id/viewOverlay"

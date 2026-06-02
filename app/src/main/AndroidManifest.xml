@@ -46,12 +46,24 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.camera.CameraActivity" />
-        <activity android:name=".ui.details.DetailsActivity" />
-        <activity android:name=".ui.history.HistoryActivity" />
-        <activity android:name=".ui.profile.ProfileActivity" />
-        <activity android:name=".ui.map.MapActivity" />
-        <activity android:name=".ui.health.HealthAnalysisActivity" />
+        <activity
+            android:name=".ui.camera.CameraActivity"
+            android:parentActivityName=".ui.main.MainActivity" />
+        <activity
+            android:name=".ui.details.DetailsActivity"
+            android:parentActivityName=".ui.main.MainActivity" />
+        <activity
+            android:name=".ui.history.HistoryActivity"
+            android:parentActivityName=".ui.main.MainActivity" />
+        <activity
+            android:name=".ui.profile.ProfileActivity"
+            android:parentActivityName=".ui.main.MainActivity" />
+        <activity
+            android:name=".ui.map.MapActivity"
+            android:parentActivityName=".ui.main.MainActivity" />
+        <activity
+            android:name=".ui.health.HealthAnalysisActivity"
+            android:parentActivityName=".ui.main.MainActivity" />
 
         <activity
             android:name="com.canhub.cropper.CropImageActivity"

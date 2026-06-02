@@ -14,6 +14,7 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 import com.mertevran.besintakip.BuildConfig
+import com.mertevran.besintakip.R
 import com.mertevran.besintakip.databinding.ActivityMapBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -64,7 +65,12 @@ class MapActivity : AppCompatActivity() {
         binding = ActivityMapBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        binding.toolbar.setNavigationIconTint(ContextCompat.getColor(this, R.color.primary))
+
+        supportActionBar?.setDisplayShowTitleEnabled(false) // If you want title from code
         title = "Yakındaki Parklar"
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
@@ -211,7 +217,7 @@ class MapActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        finish()
+        onBackPressedDispatcher.onBackPressed()
         return true
     }
 
